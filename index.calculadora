@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculadora</title>
+
+</div>
+
+    <script>
+        const baseUrl = "https://e8dc-2804-388-c2ed-40b6-56ec-923-16de-a82b.ngrok-free.app/";
+        const endpoint = "calcular";
+
+        async function apiCalc(num1, num2, operation) {
+            const response = await fecth(`${baseUrl}/${endpoint}?num1=${num1}&num2=${num2}&operation=${operation}`,
+                 { method: "GET" }
+          );
+        return await response.text();   
+           }
+            async function somar(num1, num2) {
+                return await apiCalc(num1, num2, "add");
+            }
+               async function subtrair(num1, num2) {
+                return await apiCalc(num1, num2, "subtract");
+            }
+           async function dividir(num1, num2) {
+            return await apiCalc(num1, num2, "divide");
+           }
+            async function multiplicar(num1, num2) {
+                return await apiCalc(num1, num2, "multiply");
+            }
+
+            async function calculate(){
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num1").value);
+                const operation = document.querySelector('input[name="operation"]')
+                let result;
+            }
+
+            // switch (operation){
+       // case 'add':
+             //  result = num1 + num2;
+             //  break;
+           // case 'subtract':
+            //   result = num1 - num2;
+           // case 'divide':
+              // result = num1 / num2;
+              // break;
+            //case 'multiply':
+             //  result = num1 * num2;
+              // break;
+            //default:
+             //   result = "operação inválida";
+  //  }
+  //  document.getElementById("resultado").innerText = "" + result;
+
+    </script>
+</html>
+
+<body>
+    <h1>calculadora</h1>
+
+<div>
+    número 1
+    <input id="num1" type="number"></input>
+</div>
+<div>
+    número 2
+    <input id="num2" type="number"></input>
+</div>
+<div>
+    resultado <p id="resultado">N/A</p>
+</div>
+<div>
+
+    operação:
+    <form>
+        <input name="operation" type="radio" value="+">+</input>
+        <input name="operation" type="radio" value="-">-</input>
+        <input name="operation" type="radio" value="*">*</input>
+        <input name="operation" type="radio" value="/">/</input>
+    </form>
+ </div>
+ <button onclick="calcular()/gg.gg/senai-calc2">=</button>
+</body>
+
+
+</html>
